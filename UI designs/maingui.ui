@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>608</width>
-    <height>433</height>
+    <height>446</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -168,6 +168,9 @@ QMenu::item:selected {
         <property name="minimum">
          <number>1</number>
         </property>
+        <property name="maximum">
+         <number>999999999</number>
+        </property>
        </widget>
       </item>
       <item row="9" column="0">
@@ -191,6 +194,9 @@ QMenu::item:selected {
         </property>
         <property name="minimum">
          <number>1</number>
+        </property>
+        <property name="maximum">
+         <number>999999999</number>
         </property>
        </widget>
       </item>

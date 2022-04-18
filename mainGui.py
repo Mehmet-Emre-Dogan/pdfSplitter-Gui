@@ -13,7 +13,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(608, 433)
+        MainWindow.resize(608, 446)
         MainWindow.setStyleSheet("*:disabled {\n"
 "    background-color:rgb(30, 30, 30);    \n"
 "    color: rgb(127, 127, 127);\n"
@@ -101,6 +101,7 @@ class Ui_MainWindow(object):
         font.setPointSize(20)
         self.spinBoxStart.setFont(font)
         self.spinBoxStart.setMinimum(1)
+        self.spinBoxStart.setMaximum(999999999)
         self.spinBoxStart.setObjectName("spinBoxStart")
         self.formLayout.setWidget(6, QtWidgets.QFormLayout.FieldRole, self.spinBoxStart)
         self.label_3 = QtWidgets.QLabel(self.centralwidget)
@@ -114,6 +115,7 @@ class Ui_MainWindow(object):
         font.setPointSize(20)
         self.spinBoxEnd.setFont(font)
         self.spinBoxEnd.setMinimum(1)
+        self.spinBoxEnd.setMaximum(999999999)
         self.spinBoxEnd.setObjectName("spinBoxEnd")
         self.formLayout.setWidget(9, QtWidgets.QFormLayout.FieldRole, self.spinBoxEnd)
         self.label_4 = QtWidgets.QLabel(self.centralwidget)
