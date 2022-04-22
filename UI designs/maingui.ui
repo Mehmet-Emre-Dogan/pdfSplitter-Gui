@@ -130,7 +130,7 @@ QMenu::item:selected {
          </font>
         </property>
         <property name="text">
-         <string>Output File: </string>
+         <string>Output Filename: </string>
         </property>
        </widget>
       </item>
@@ -140,6 +140,9 @@ QMenu::item:selected {
          <font>
           <pointsize>14</pointsize>
          </font>
+        </property>
+        <property name="toolTip">
+         <string>Leave empty for timestamped filename</string>
         </property>
         <property name="text">
          <string/>
@@ -154,7 +157,7 @@ QMenu::item:selected {
          </font>
         </property>
         <property name="text">
-         <string>Start: </string>
+         <string>Start Page: </string>
         </property>
        </widget>
       </item>
@@ -181,7 +184,7 @@ QMenu::item:selected {
          </font>
         </property>
         <property name="text">
-         <string>End: </string>
+         <string>End Page: </string>
         </property>
        </widget>
       </item>

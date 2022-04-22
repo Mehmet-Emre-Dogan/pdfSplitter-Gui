@@ -61,8 +61,11 @@ def main(*args):
     input_pdf = PdfFileReader(inFil)
     if start <= 0 or end <= 0:
         raise Exception("Enter positive start and end page numbers!")
+
     if input_pdf.getNumPages() < end:
         raise Exception("End page cannot be greater than overall page number!")
+    elif start > end:
+        raise Exception("Start page number cannot be greater than end page number!")
     output = PdfFileWriter()
     for i in range(start-1, end):
         output.addPage(input_pdf.getPage(i))
@@ -205,7 +208,7 @@ class myWindow(QtWidgets.QMainWindow):
 
     def onSplitClicked(self):
         if self.ui.lineEdit.text(): # if filename is null, create a timestamp filename
-            outName = self.ui.lineEdit.text()
+            outName = self.ui.lineEdit.text() + ".pdf"
         else:
             outName = f"Splitted__{datetime.datetime.now().strftime('%Y-%m-%d_%H.%M.%S')}.pdf"
 
@@ -240,7 +243,7 @@ class myWindow(QtWidgets.QMainWindow):
             if len(filesWithAbsPaths):
                 os.system(f"""start explorer.exe  /select, "{filesWithAbsPaths[0]}" """)
             else:
-                os.system(f"""start explorer.exe  "{self.settings["defaultOutputFolder"]}" """)
+                os.system(f"""start explorer.exe  "{str(self.settings["defaultOutputFolder"]).lstrip("./")}" """)
         except (Exception, ValueError, OSError, FileNotFoundError, IndexError) as err:
             self.errorMessage(text=str(err)) 
 
